@@ -57,7 +57,8 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main id="top">
+      <a className="skip-link" href="#features">Skip to content</a>
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#" aria-label="EchoGPT home"><span className="brand-mark"><Sparkles size={17} /></span>echogpt<span className="brand-dot">.</span></a>
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -97,7 +98,7 @@ export default function Home() {
       <section className="faq-section shell" id="faq"><div><span className="eyebrow">Questions, answered</span><h2>Curious?<br /><em>Good.</em></h2></div><div className="faq-list">{["What is EchoGPT?", "Which AI models can I use?", "Is EchoGPT free to use?", "Where can I use the extension?"].map((question, i) => <details key={question} open={i === 0}><summary>{question}<span>+</span></summary><p>EchoGPT brings multiple leading AI models into one simple workspace, helping you compare, create, and find your flow. Start free and see where it takes you.</p></details>)}</div></section>
 
       <section className="cta-section shell" id="cta"><div className="cta-inner"><div className="cta-spark"><Sparkles size={22} /></div><h2>Your next great idea<br /><em>starts here.</em></h2><p>Join thousands of people thinking, making, and doing more with EchoGPT.</p>{joined ? <p className="success-message" role="status">You&apos;re on the list. We&apos;ll save you a seat.</p> : <form className="waitlist-form" onSubmit={submitWaitlist}><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" required aria-label="Email address" /><button className="button button-light" type="submit">Start for free <ArrowRight size={17} /></button></form>}</div></section>
-      <footer className="footer shell"><a className="brand" href="#"><span className="brand-mark"><Sparkles size={17} /></span>echogpt<span className="brand-dot">.</span></a><span>© 2024 EchoGPT. Made for curious minds.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#twitter">Twitter</a></div></footer>
+      <footer className="footer shell"><a className="brand" href="#top"><span className="brand-mark"><Sparkles size={17} /></span>echogpt<span className="brand-dot">.</span></a><span>© 2024 EchoGPT. Made for curious minds.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#twitter">Twitter</a></div></footer>
       {workspaceOpen && <div className="modal-backdrop" role="presentation" onClick={() => setWorkspaceOpen(false)}><section className="workspace-modal" role="dialog" aria-modal="true" aria-labelledby="workspace-title" onClick={(event) => event.stopPropagation()}><button className="modal-close" onClick={() => setWorkspaceOpen(false)} aria-label="Close extension preview"><X size={17} /></button><span className="eyebrow">EchoGPT extension</span><h2 id="workspace-title">Bring your<br /><em>best thinking.</em></h2><p>Highlight any text on the web, or open the side panel with <kbd>⌘</kbd> <kbd>J</kbd>. Your next answer is always one shortcut away.</p><div className="modal-shortcuts"><span><kbd>⌘</kbd><kbd>J</kbd> Open side panel</span><span><kbd>⌘</kbd><kbd>Enter</kbd> Send prompt</span></div><button className="button" onClick={() => setWorkspaceOpen(false)}>Got it <ArrowRight size={15} /></button></section></div>}
     </main>
   );

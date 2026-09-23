@@ -11,6 +11,8 @@ This repository intentionally contains a partial product concept rather than a c
 - A browser extension concept with a compact side-panel flow.
 - Responsive navigation and mobile layouts.
 - Keyboard-friendly native links, buttons, and FAQ disclosure elements.
+- Interactive prompt demo with local response state.
+- Light/dark mode toggle, model selection, waitlist form, and extension preview modal.
 
 ## Setup
 
@@ -47,4 +49,7 @@ npm run start
 - Dark ink / lavender visual system with coral accents.
 - Mobile navigation drawer.
 - Native FAQ accordions.
+- Theme toggle with system-friendly reduced-motion behavior.
+- Accessible skip link and visible focus states.
+- Client-side prototype interactions without a backend dependency.
 - Reduced-dependency implementation with no image assets required.
